@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Katalog Dekorasi - Asad Decoration</title>
+
+  <!-- Google Fonts & Tailwind CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Config Kustom -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: '#D4AF37',
+            'gold-deep': '#B8860B',
+            charcoal: '#2C2C2C',
+            'charcoal-soft': '#4A4A4A',
+            ivory: '#FDFBF7',
+          },
+          fontFamily: {
+            playfair: ['Playfair Display', 'serif'],
+            dm: ['DM Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-ivory text-charcoal font-dm min-h-screen flex flex-col">
+
+  <!-- 1. Header Ringkas -->
+  <header class="sticky top-0 z-40 bg-ivory/90 backdrop-blur-md border-b border-gold/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-2.5">
+        <img src="assets/Logo.png" alt="Asad Decoration" class="w-9 h-9 rounded-full object-cover" />
+        <div>
+          <span class="font-playfair font-bold text-charcoal text-base sm:text-lg">Asad</span>
+          <span class="font-playfair italic text-gold text-base sm:text-lg"> Decoration</span>
+        </div>
+      </a>
+
+      <!-- Tombol Kembali -->
+      <a href="asad-decoration.html" class="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-charcoal-soft hover:text-gold transition-colors duration-200">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        <span>Kembali ke Beranda</span>
+      </a>
+
+    </div>
+  </header>
+
+  <!-- 2. Section Hero & Filter Kategori -->
+  <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 w-full">
+    
+    <!-- Judul Halaman -->
+    <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+      <h1 id="page-title" class="font-playfair font-bold text-2xl sm:text-4xl text-charcoal mb-3">
+        Koleksi Dekorasi
+      </h1>
+      <p id="page-subtitle" class="text-charcoal-soft text-sm sm:text-base">
+        Pilih model dekorasi favoritmu dan konsultasikan konsep impianmu langsung dengan tim kami.
+      </p>
+    </div>
+
+    <!-- Container Filter Sub-Kategori (Pills) -->
+    <div id="filter-container" class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10">
+      <!-- Ditinggal kosong dulu, bakal di-render otomatis lewat JS sesuai kategori yang dibuka -->
+    </div>
+
+    <!-- 3. Grid Kartu Produk (Market Place Style) -->
+    <div id="catalog-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
+      <!-- Di sini tempat kartu-kartu foto dekorasi akan bermunculan dari file JSON -->
+    </div>
+
+  </main>
+
+  <!-- Footer Simple -->
+  <footer class="border-t border-gold/10 py-6 text-center text-xs text-charcoal-soft">
+    &copy; 2026 Asad Decoration. All rights reserved.
+  </footer>
+
+</body>
+</html>

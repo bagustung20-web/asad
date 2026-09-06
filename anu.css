@@ -1,0 +1,213 @@
+
+    :root {
+      --gold: #D4AF37;
+      --gold-deep: #B8860B;
+      --ivory: #FDFBF7;
+      --charcoal: #2C2C2C;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { background-color: var(--ivory); font-family: 'DM Sans', sans-serif; color: var(--charcoal); overflow-x: hidden; }
+
+    /* ——— Marquee ——— */
+    .marquee-track { display: flex; width: max-content; animation: marquee 28s linear infinite; }
+    .marquee-track:hover { animation-play-state: paused; }
+    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* ——— Glassmorphism ——— */
+    .glass {
+      background: rgba(253, 251, 247, 0.55);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+    }
+
+    /* ——— Card hover ——— */
+    .catalog-card {
+      transition: transform 0.35s cubic-bezier(.25,.8,.25,1), box-shadow 0.35s cubic-bezier(.25,.8,.25,1);
+    }
+    .catalog-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 24px 48px -8px rgba(212,175,55,0.30), 0 0 0 1px rgba(212,175,55,0.18);
+    }
+
+    /* ——— Gold gradient text ——— */
+    .gold-text {
+      background: linear-gradient(135deg, #D4AF37 0%, #F0D060 40%, #B8860B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ——— Ornamental divider ——— */
+    .ornament { display: flex; align-items: center; gap: 12px; }
+    .ornament::before, .ornament::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, #D4AF37, transparent); }
+
+    /* ——— Navbar scroll ——— */
+    #navbar { transition: background 0.4s, box-shadow 0.4s; }
+    #navbar.scrolled { background: rgba(253,251,247,0.96) !important; box-shadow: 0 2px 20px rgba(212,175,55,0.15); }
+    .bg-gold-gradient { background: linear-gradient(135deg,#D4AF37,#B8860B); }
+    .text-gold { color: #D4AF37; }
+
+    /* Transisi halus */
+#navbar {
+  transition: background-color 0.3s ease;
+}
+
+/* Target HANYA kata "Asad" & link menu Desktop pas belum scroll */
+#navbar:not(.scrolled) a > div > span:first-child,
+#navbar:not(.scrolled) .hidden.md\:flex a {
+  color: #ffffff !important;
+}
+
+/* Tetap jaga warna gold pas hover di posisi atas */
+#navbar:not(.scrolled) .hidden.md\:flex a:hover {
+  color: #D4AF37 !important;
+}
+
+
+    /* ——— Hero background ——— */
+    .hero-bg {
+      background-image:
+        linear-gradient(135deg, rgba(28,22,10,0.72) 0%, rgba(45,35,5,0.58) 60%, rgba(180,140,20,0.18) 100%),
+        url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    .hero-section-bg { background: #F5F0E8; }
+    .sparkle-1 { top: -40px; left: -60px; opacity: .2; }
+    .sparkle-2 { bottom: 60px; right: -30px; opacity: .15; animation-delay: 1.5s; }
+
+
+    /* ——— Sparkle dots ——— */
+    .sparkle { position: absolute; border-radius: 50%; background: radial-gradient(circle, #D4AF37 0%, transparent 70%); animation: sparkle-pulse 3s ease-in-out infinite; }
+    @keyframes sparkle-pulse { 0%,100%{opacity:.15;transform:scale(1)} 50%{opacity:.45;transform:scale(1.4)} }
+
+    /* ——— Floating badge ——— */
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+    .float-badge { animation: float 4s ease-in-out infinite; }
+
+    /* ——— CTA pulse ——— */
+    @keyframes wa-pulse { 0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.5)} 50%{box-shadow:0 0 0 14px rgba(37,211,102,0)} }
+    .wa-btn-pulse { animation: wa-pulse 2.2s ease-in-out infinite; }
+
+    /* ——— Section texture ——— */
+    .section-texture {
+      background-image: radial-gradient(circle at 20% 50%, rgba(212,175,55,0.05) 0%, transparent 60%),
+                        radial-gradient(circle at 80% 20%, rgba(212,175,55,0.07) 0%, transparent 55%);
+    }
+
+    /* ——— Benefit icon ring ——— */
+    .icon-ring {
+      background: linear-gradient(135deg, #D4AF37, #B8860B);
+      padding: 2px;
+      border-radius: 9999px;
+    }
+    .icon-ring-inner {
+      background: var(--ivory);
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ——— Price tag ——— */
+    .price-tag {
+      background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* ——— Feature check ——— */
+    .feature-check::before { content: '✦'; color: #D4AF37; margin-right: 8px; font-size: 12px; }
+
+    /* ——— Mobile nav toggle ——— */
+    #mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    #mobile-menu.open { max-height: 400px; }
+.btn-whatsapp {
+  background: linear-gradient(135deg,#25D366,#128C7E);
+}
+.hero-badge {
+  background: rgba(212,175,55,0.2);
+  border: 1px solid rgba(212,175,55,0.45);
+  color: #F0D060;
+}
+.hero-primary-btn {
+  background: linear-gradient(135deg,#D4AF37,#F0D060);
+  box-shadow: 0 8px 32px rgba(212,175,55,0.4);
+}
+.hero-secondary-btn {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.35);
+  backdrop-filter: blur(8px);
+}
+.marquee-section {
+  background: linear-gradient(135deg,#D4AF37 0%,#B8860B 100%);
+}
+.benefit-highlight {
+  border-color: rgba(212,175,55,0.4);
+  background: rgba(212,175,55,0.06);
+}
+.catalog-section-bg {
+  background: #F5F0E8;
+}
+.catalog-ornament-left {
+  background: radial-gradient(circle,#D4AF37,transparent);
+  transform: translate(40%,-40%);
+}
+.catalog-ornament-right {
+  background: radial-gradient(circle,#D4AF37,transparent);
+  transform: translate(-40%,40%);
+}
+.card-bg-night {
+  background: linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);
+}
+.card-bg-brown {
+  background: linear-gradient(135deg,#1a160a 0%,#2d2210 100%);
+}
+.btn-gold {
+  background: linear-gradient(135deg,#D4AF37,#F0D060);
+}
+.card-bg-purple {
+  background: linear-gradient(135deg,#2d1b35 0%,#1a0f22 50%,#3d2347 100%);
+}
+.card-btn-gold {
+  background: linear-gradient(135deg,#D4AF37,#B8860B);
+  color: #1a1a1a;
+}
+.cta-section-bg {
+  background: linear-gradient(135deg,#1a1508 0%,#2d2210 40%,#1a1508 100%);
+}
+.cta-orb-left {
+  background: radial-gradient(circle,#D4AF37,transparent);
+  transform: translate(-50%,-50%);
+}
+.cta-orb-right {
+  background: radial-gradient(circle,#D4AF37,transparent);
+  transform: translate(50%,-50%);
+}
+.cta-crown {
+  background: linear-gradient(135deg,rgba(212,175,55,0.2),rgba(212,175,55,0.1));
+  border: 1px solid rgba(212,175,55,0.4);
+}
+.cta-info-border {
+  border-color: rgba(212,175,55,0.3);
+}
+.cta-whatsapp-btn {
+  background: linear-gradient(135deg,#25D366,#128C7E);
+  color: white;
+}
+.feature-pill {
+  background: rgba(212,175,55,0.12);
+  color: #B8860B;
+  border: 1px solid rgba(212,175,55,0.3);
+}
+.footer-pill-gold {
+  background: rgba(212,175,55,0.15);
+  border: 1px solid rgba(212,175,55,0.25);
+}
+.footer-pill-green {
+  background: rgba(37,211,102,0.15);
+  border: 1px solid rgba(37,211,102,0.25);
+}
